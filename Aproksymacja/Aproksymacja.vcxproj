@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Approximation.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MathUtilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Approximation.h" />
+    <ClInclude Include="MathUtilities.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{96C240C5-DB31-4739-A26C-F7427CB2A084}</ProjectGuid>
     <RootNamespace>Aproksymacja</RootNamespace>
@@ -109,8 +118,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
