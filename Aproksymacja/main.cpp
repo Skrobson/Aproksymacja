@@ -24,45 +24,16 @@ int main()
 	//std::vector<double> x;
 	//std::vector<double> y;
 	//disctretization(nodesAmount, downRange, upRange,x,y, lambdaF);
-	////std::cout << x.size();
-	//Approximation a(nodesAmount, 3, x, y);
-	//std::cout << a.aj(0) << std::endl;
-	//std::cout << a.aj(1) << std::endl;
-	//std::cout << a.aj(2) << std::endl;
-	//std::cout << a.aj(3) << std::endl;
-
-	//std::vector<node> disNodes; 
+	//Approximation a(25, x, y);
 	
-	////test
-	//for (auto obj : disNodes)
-	//{
-	//	std::cout << obj.x << " " << obj.y << std::endl;
-	//}
-	//std::vector<double> normalizeQ;
-	//for (int i = 0; i <= nodesAmount; ++i)
-	//{
-	//	normalizeQ.push_back(linearTransformation(range, disNodes[0].x, disNodes[i].x));
-	//	//test
-	//	//std::cout << normalizeQ.back() << std::endl;
-	//}
-	////test
-	////std::cout  << std::endl;//grammPolymonial( 4, 3,  1)
-	////std::cout << aproximation(nodesAmount, 3, normalizeQ, disNodes);
+	
+	
 
-	////test
-	//auto testL = [](double x) {return 1 - x*x; };
-	//std::vector<node> testNodes;
-	//testNodes= disctretization(4, -1, 1, testL);
-	//std::vector<double> normalizeQ2;
-	//double tempRange = (1 - (-1)) / 4;
-	//for (int i = 0; i <= 4; ++i)
-	//{
-	//	normalizeQ2.push_back(linearTransformation(0.5, testNodes[0].x, testNodes[i].x));
-	//}
-	//for (int i = 0; i <= 3; ++i)
-	//{
-	//	//std::cout << "a" << i << ": "<<aproximation(4, i, normalizeQ2, testNodes) << std::endl;
-	//}
+	
+	
+
+
+	
 
 	std::vector<double> x2(5);
 	std::vector<double> y2(5);
