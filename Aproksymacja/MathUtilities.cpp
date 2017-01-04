@@ -10,5 +10,14 @@ int factorial(int n)
 
 double newtonSymbol(int n, int k)
 {
-	return factorial(n) / (factorial(k)*factorial(n - k));
+	if ((k > 0) && (k < n))
+		return factorial(n) / (factorial(k)*factorial(n - k));
+	else if ((k == 0) || (k == n))
+		return 1;
+	else
+		//dobr¹ opcj¹ jest zrobienie tutaj wyj¹tku który po prostu przerwa³by program bez dalszych ceregieli
+		//i w mainie ponad g³ówn¹ pêtl¹ zaj¹æ siê wszystkimi wyj¹tkami, dla dzielenia przez 0 na przyk³ad kod -1
+		//tu jest te¿ zamieszczony wypadek kiedy n < k lub któreœ jest niedodatnie
+		//throw -1 ;
+		return -1;
 }

@@ -27,6 +27,9 @@
     <ClInclude Include="Approximation.h" />
     <ClInclude Include="MathUtilities.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="wzor.jpg" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{96C240C5-DB31-4739-A26C-F7427CB2A084}</ProjectGuid>
     <RootNamespace>Aproksymacja</RootNamespace>
