@@ -1,6 +1,9 @@
 #pragma once
 #include <vector>
 #include "MathUtilities.h"
+#include <iostream>
+#include <fstream>
+
 
 
 //TODO: sprawdzanie czy punkty sa rownolegle
@@ -9,6 +12,8 @@ class Approximation
 public:
 	
 	Approximation(int degree, std::vector<double> x, std::vector<double> y);
+
+	Approximation(int degree, std::ifstream & input);
 
 	double aj( int degree);
 	
@@ -19,6 +24,8 @@ public:
 	std::vector<int> m_q;
 	std::vector<double> m_aj;
 	std::vector<double> m_daj;
+
+	friend std::ostream & operator<<(std::ostream & output, const Approximation input);
 
 	~Approximation();
 protected:

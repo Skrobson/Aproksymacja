@@ -1,11 +1,29 @@
 #include "Approximation.h"
 #include <iostream>
-
-
+#include <fstream>
+#include <string>
+using namespace std;
 Approximation::Approximation(int degree,std::vector<double> x, std::vector<double> y) :mDegree(degree),m_x(x), m_y(y)
 {
 	mNodesAmount = x.size() - 1;
 	mRange = (m_x.back()-m_x.front()) / mNodesAmount;
+	linearTransformation();
+	aj();
+	deltaAj();
+}
+
+Approximation::Approximation(int degree, std::ifstream & input) :mDegree(degree)
+{
+	std::string temp;
+	while (getline(input,temp))
+	{
+		m_x.push_back(atof(temp.c_str()));
+		getline(input, temp);
+		m_y.push_back(atof(temp.c_str()));
+	}
+
+	mNodesAmount = m_x.size() - 1;
+	mRange = (m_x.back() - m_x.front()) / mNodesAmount;
 	linearTransformation();
 	aj();
 	deltaAj();
@@ -144,6 +162,15 @@ void Approximation::clear()
 	//m_Pjq.clear();
 	//m_cj.clear();
 	//m_sj.clear();
+}
+
+std::ostream & operator<< (std::ostream & output, const Approximation input)
+{
+	for (int i = 0; i < input.m_q.size(); ++i)
+	{
+		output << "q" << input.m_q[i] << "   x: " << input.m_x[i] << "\t  y: " << input.m_y[i] << std::endl;
+	}
+	return output;
 }
 
 Approximation::~Approximation()

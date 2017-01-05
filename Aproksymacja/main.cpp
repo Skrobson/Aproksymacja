@@ -57,7 +57,7 @@ int main()
 	//std::cout << b.aj(1)<<std::endl;
 	//std::cout << b.aj(2) << std::endl;
 	//std::cout << b.aj(3) << std::endl;
-
+	
 	for(auto obj:b.m_q)
 		std::cout <<"q: "<< obj << std::endl;
 	for (auto obj : b.m_x)
@@ -69,6 +69,21 @@ int main()
 		std::cout << "aj: " << obj << std::endl;
 	for (auto obj : b.m_daj)
 		std::cout << "d a: " << obj << std::endl;
+	
+	std::ifstream iff;
+	iff.open("input.txt");
+
+	if (iff.is_open())
+	{
+		Approximation a(2,iff);
+		iff.close();
+		std::ofstream f;
+
+		f.open("proba.txt");
+		if (f.is_open())
+			f << a;
+		f.close();
+	}
 	//for (int i=0; i <= 2; ++i)
 	//{
 	//	for (int j = 0; j <= 4; ++j)
