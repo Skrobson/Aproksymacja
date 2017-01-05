@@ -57,7 +57,7 @@ int main()
 	//std::cout << b.aj(1)<<std::endl;
 	//std::cout << b.aj(2) << std::endl;
 	//std::cout << b.aj(3) << std::endl;
-	
+	//
 	for(auto obj:b.m_q)
 		std::cout <<"q: "<< obj << std::endl;
 	for (auto obj : b.m_x)
