@@ -111,7 +111,7 @@ double Approximation::grammProduct(double r, int n)
 double Approximation::deltaAj(int degree)
 {
 	double daj=0.0;
-	double tempDaj;
+	double tempDaj=0.0;
 	for (int i = 0; i <= mNodesAmount; ++i)
 	{
 		double tempSum = 0.0;
@@ -120,7 +120,7 @@ double Approximation::deltaAj(int degree)
 			tempSum += m_aj[j]* pow(m_x[i], j);
 			tempSum -= m_y[i];
 		}
-		tempDaj = pow(tempSum, 2);
+		tempDaj += pow(tempSum, 2);
 	}
 	tempDaj /= mNodesAmount + 1;
 	daj = sqrt(tempDaj);
