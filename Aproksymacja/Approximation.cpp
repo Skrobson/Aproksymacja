@@ -129,7 +129,7 @@ double Approximation::grammProduct(double r, int n)
 
 double Approximation::deltaAj(int degree)
 {
-	double daj=0.0;
+	/*double daj=0.0;
 	double tempDaj=0.0;
 	for (int i = 0; i <= mNodesAmount; ++i)
 	{
@@ -143,7 +143,17 @@ double Approximation::deltaAj(int degree)
 	}
 	tempDaj /= mNodesAmount + 1;
 	daj = sqrt(tempDaj);
-	return daj;
+	return daj;*/
+
+	double sum = 0.0f;
+	for (int i = 0; i <= mNodesAmount; ++i)
+	{
+		double temp = m_y[i] - operator()(degree, m_x[i]);
+		temp *= temp;
+		sum += temp;
+	}
+	sum = sqrt(sum);
+	return sum;
 }
 
 void Approximation::deltaAj()
