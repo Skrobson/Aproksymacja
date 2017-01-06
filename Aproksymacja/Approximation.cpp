@@ -68,6 +68,7 @@ double Approximation::operator()(int degree, double x)
 	{
 		y += aj(i)*grammPolymonial(i,q);
 	}
+	
 	return y;
 }
 
@@ -135,7 +136,7 @@ double Approximation::deltaAj(int degree)
 		double tempSum = 0.0;
 		for (int j = 0; j <= degree; ++j)
 		{
-			tempSum += m_aj[j]* pow(m_x[i], j);
+			tempSum += m_aj[j]* operator()(j,m_x[i] );
 			tempSum -= m_y[i];
 		}
 		tempDaj += pow(tempSum, 2);
@@ -172,7 +173,7 @@ std::ostream & operator<< (std::ostream & output, const Approximation input)
 	}
 	for (int i = 0; i < input.m_aj.size(); ++i)
 	{
-		output << "a" << i << " " << input.m_aj[i] << std::endl;
+		output << "a" << i << " " << input.m_aj[i] << "\t blad: "<<input.m_daj[i]<< std::endl;
 	}
 	return output;
 }

@@ -15,21 +15,22 @@ public:
 
 	Approximation(int degree, std::ifstream & input);
 
-	double aj( int degree);
+	
 	
 	double operator()(int degree, double x);
 
-	std::vector<double> m_x;
-	std::vector<double> m_y;
-	std::vector<int> m_q;
-	std::vector<double> m_aj;
-	std::vector<double> m_daj;
+	void aprprox();
 
 	friend std::ostream & operator<<(std::ostream & output, const Approximation input);
 
 	~Approximation();
 protected:
-	
+	std::vector<double> m_x;
+	std::vector<double> m_y;
+	std::vector<int> m_q;
+	std::vector<double> m_aj;
+	std::vector<double> m_daj;
+	std::vector<double> m_Fx;
 	double mRange;
 	int mDegree;
 	int mNodesAmount;
@@ -39,7 +40,7 @@ protected:
 
 	double grammProduct(double r, int n);
 	double grammPolymonial(int degree, double q);
-	
+	double aj( int degree);
 	double cj(int degree);
 	double sj(int degree);
 
