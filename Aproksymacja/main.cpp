@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cmath>
 #include <vector>
 
@@ -13,8 +14,18 @@
 
 int main()
 {
+	std::cout << "podaj stopien wielomianu: ";
+	int degree;
+	std::cin >> degree;
+	std::cout <<std::endl<< "podaj ilosc wezlow: ";
+	int nodesAmount;
+	std::cin >> nodesAmount;
+	std::cout<<std::endl << "podaj nazwe pliku wynikowego: ";
+	std::string fileName;
+	std::cin >> fileName;
+
 	////TODO: wczytywanie z klawiatury
-	int nodesAmount = 50;
+	// = 50;
 	double downRange = -2.0;
 	double upRange = 2.0;
 	double range = (upRange - downRange) / nodesAmount;
@@ -24,10 +35,16 @@ int main()
 	std::vector<double> x;
 	std::vector<double> y;
 	disctretization(nodesAmount, downRange, upRange,x,y, lambdaF);
-	Approximation a(5, x, y);
-	
+	Approximation a(degree, x, y);
+	std::vector<double> Fx;
+	for (auto obj : x)
+	{
+		double y = a(degree, obj);
+		Fx.push_back(y);
+		std::cout << y << std::endl;
+	}
 	std::ofstream f;
-	f.open("proba.txt");
+	f.open("result/"+fileName);
 		if (f.is_open())
 			f << a;
 		f.close();
@@ -93,7 +110,7 @@ int main()
 	//		std::cout << "Pj: " << b.m_Pjq[i][j] << std::endl;
 	//	}
 	//}
-	
+		std::cout << std::endl << "wcisnij przycisk aby zakonczyc...";
 		_getch();
 	return 0;
 }
