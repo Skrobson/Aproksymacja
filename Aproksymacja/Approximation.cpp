@@ -85,7 +85,7 @@ double Approximation::grammPolymonial( int degree, double q)
 		temp *= grammProduct(q, i) / grammProduct(mNodesAmount, i);
 		sum += temp;
 	}
-	std::cout << "Pj: " << degree<< " " << q << " " << sum << std::endl;
+	//std::cout << "Pj: " << degree<< " " << q << " " << sum << std::endl;
 	
 	return sum;
 }
@@ -168,7 +168,11 @@ std::ostream & operator<< (std::ostream & output, const Approximation input)
 {
 	for (int i = 0; i < input.m_q.size(); ++i)
 	{
-		output << "q" << input.m_q[i] << "   x: " << input.m_x[i] << "\t  y: " << input.m_y[i] << std::endl;
+		output<<"i:"<<i<<" " << "q: " << input.m_q[i] << "   x: " << input.m_x[i] << "\t  y: " << input.m_y[i] << std::endl;
+	}
+	for (int i = 0; i < input.m_aj.size(); ++i)
+	{
+		output << "a" << i << " " << input.m_aj[i] << std::endl;
 	}
 	return output;
 }
