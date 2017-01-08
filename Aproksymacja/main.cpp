@@ -37,11 +37,14 @@ int main()
 	disctretization(nodesAmount, downRange, upRange,x,y, lambdaF);
 	Approximation a(degree, x, y);
 	std::vector<double> Fx;
+	std::ofstream k;
+	k.open("result/Q(x)" + fileName);
+	if (k.is_open())
 	for (auto obj : x)
 	{
 		double y = a(degree, obj);
 		Fx.push_back(y);
-		std::cout << y << std::endl;
+		k << y << std::endl;
 	}
 	std::ofstream f;
 	f.open("result/"+fileName);
